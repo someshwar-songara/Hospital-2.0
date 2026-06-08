@@ -1,0 +1,282 @@
+/* ============================================================
+   APEX HEALTH CARE – Facilities Page Stylesheet
+   ============================================================ */
+
+/* ── PAGE SECTION ────────────────────────────────────────── */
+.facilities-page-section {
+  padding: 80px 0;
+  background: var(--grey-50);
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--grey-300);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--teal);
+  color: var(--white);
+  border-color: var(--teal);
+}
+
+.facility-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── INTRO STRIP ─────────────────────────────────────────── */
+.facilities-intro {
+  background: var(--grey-50);
+  padding: 56px 0;
+  border-bottom: 1px solid var(--grey-100);
+}
+
+.intro-stat {
+  text-align: center;
+  padding: 20px 16px;
+}
+.intro-stat .stat-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1;
+  display: block;
+}
+.intro-stat .stat-lbl {
+  font-size: 0.85rem;
+  color: var(--grey-500);
+  margin-top: 4px;
+}
+
+/* Dividers between stat items */
+.intro-stat + .intro-stat {
+  border-left: 1px solid var(--grey-300);
+}
+
+/* ── FACILITIES GRID ─────────────────────────────────────── */
+.facilities-grid {
+  background: var(--white);
+  padding: 88px 0;
+}
+
+/* Filter tabs */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 52px;
+}
+
+.filter-tab {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 50px;
+  border: 1.5px solid var(--grey-300);
+  background: transparent;
+  color: var(--grey-500);
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.03em;
+}
+.filter-tab:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(0,201,167,0.06);
+}
+.filter-tab.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--navy);
+  box-shadow: 0 4px 16px rgba(0,201,167,0.35);
+}
+
+/* Service card */
+.service-item {
+  margin-bottom: 32px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--grey-100);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0,201,167,0.25);
+}
+
+/* Image wrapper */
+.scard-img {
+  position: relative;
+  overflow: hidden;
+  height: 210px;
+}
+
+.scard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s ease;
+  display: block;
+}
+.service-card:hover .scard-img img { transform: scale(1.08); }
+
+/* Icon badge */
+.scard-icon {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  font-size: 1.15rem;
+  box-shadow: 0 6px 20px rgba(0,201,167,0.45);
+  z-index: 2;
+  transition: transform var(--transition);
+}
+.service-card:hover .scard-icon { transform: rotate(8deg) scale(1.1); }
+
+/* Gradient overlay on image */
+.scard-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10,22,40,0.55) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.service-card:hover .scard-img-overlay { opacity: 1; }
+
+/* Card body */
+.scard-body {
+  padding: 32px 22px 24px;
+}
+.scard-body h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.scard-body p {
+  font-size: 0.88rem;
+  color: var(--grey-500);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.scard-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal);
+  transition: gap var(--transition), color var(--transition);
+}
+.scard-link i { font-size: 0.7rem; transition: transform var(--transition); }
+.service-card:hover .scard-link { gap: 10px; }
+.service-card:hover .scard-link i { transform: translateX(3px); }
+
+/* ── CTA BAND ─────────────────────────────────────────────── */
+.cta-band {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid, #112240) 100%);
+  padding: 72px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,201,167,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-band::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,201,167,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-band h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.cta-band h2 span { color: var(--teal); }
+.cta-band p {
+  color: rgba(255,255,255,0.65);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  font-size: 1rem;
+}
+.btn-teal-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: var(--navy);
+  padding: 15px 40px;
+  border-radius: 50px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 6px 28px rgba(0,201,167,0.45);
+}
+.btn-teal-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0,201,167,0.6);
+  color: var(--navy);
+}
+
+
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .facilities-page-section { padding: 72px 0; }
+}
+
+@media (max-width: 768px) {
+  .facilities-page-section { padding: 56px 0; }
+  section { padding: 60px 0; }
+  .intro-stat + .intro-stat { border-left: none; border-top: 1px solid var(--grey-100); }
+  .filter-tabs { gap: 8px; }
+  .filter-tab { font-size: 0.78rem; padding: 7px 16px; }
+  .filter-btn { padding: 8px 18px; font-size: 0.82rem; }
+  .facility-card-img { height: 200px; }
+  .scard-img { height: 180px; }
+}
+
+@media (max-width: 575px) {
+  .filter-btn { flex: 1 1 auto; text-align: center; min-width: 90px; }
+  .facility-card-img { height: 180px; }
+}

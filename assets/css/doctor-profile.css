@@ -1,0 +1,325 @@
+/* ============================================================
+   APEX HEALTH CARE – Doctor Profile Stylesheet
+   Shared by all individual doctor profile pages
+   ============================================================ */
+
+/* ── PROFILE SECTION ─────────────────────────────────────── */
+.profile-section { padding: 88px 0; }
+
+/* Photo card */
+.doctor-photo-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--grey-100);
+  position: sticky;
+  top: 100px;
+}
+
+.doctor-photo-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.photo-card-body {
+  padding: 28px 24px 24px;
+  text-align: center;
+}
+
+.photo-card-body h2 {
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.specialty-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,201,167,0.10);
+  border: 1px solid rgba(0,201,167,0.30);
+  color: var(--teal-dark);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin: 10px 0 18px;
+}
+
+.mini-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 18px 0;
+  border-top: 1px solid var(--grey-100);
+  border-bottom: 1px solid var(--grey-100);
+  margin-bottom: 22px;
+}
+.mini-stat .num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1;
+  display: block;
+}
+.mini-stat .lbl {
+  font-size: 0.75rem;
+  color: var(--grey-500);
+  margin-top: 3px;
+}
+
+.btn-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: var(--navy);
+  padding: 13px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+  box-shadow: 0 4px 20px rgba(0,201,167,0.38);
+  text-decoration: none;
+}
+.btn-book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(0,201,167,0.55);
+  filter: brightness(1.06);
+  color: var(--navy);
+}
+
+.btn-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: transparent;
+  color: var(--navy);
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 1.5px solid var(--grey-300);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  margin-top: 10px;
+}
+.btn-call:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(0,201,167,0.06);
+}
+
+/* Info panel */
+.doctor-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.info-block {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--grey-100);
+}
+
+.block-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--grey-100);
+}
+.block-title i {
+  width: 32px;
+  height: 32px;
+  background: rgba(0,201,167,0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-size: 0.85rem;
+}
+
+.info-block p {
+  font-size: 0.95rem;
+  color: var(--grey-500);
+  line-height: 1.8;
+}
+
+/* Qualification pills */
+.qual-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.qual-list li {
+  background: var(--grey-50);
+  border: 1.5px solid var(--grey-100);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  color: var(--navy);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: border-color var(--transition), background var(--transition);
+}
+.qual-list li:hover {
+  border-color: var(--teal);
+  background: rgba(0,201,167,0.05);
+}
+.qual-list li i { color: var(--teal); font-size: 0.75rem; }
+
+/* Expertise tags */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.expertise-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--grey-50);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--grey-100);
+  font-size: 0.88rem;
+  color: var(--grey-700);
+  transition: border-color var(--transition), background var(--transition);
+}
+.expertise-item:hover {
+  border-color: rgba(0,201,167,0.3);
+  background: rgba(0,201,167,0.04);
+}
+.expertise-item i { color: var(--teal); font-size: 0.8rem; }
+
+/* Days row */
+.days-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.day-chip {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+.day-chip.available {
+  background: rgba(0,201,167,0.12);
+  color: var(--teal-dark);
+  border: 1px solid rgba(0,201,167,0.3);
+}
+.day-chip.unavailable {
+  background: var(--grey-100);
+  color: var(--grey-500);
+  border: 1px solid var(--grey-100);
+  text-decoration: line-through;
+}
+.hours-note {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  color: var(--grey-500);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hours-note i { color: var(--teal); }
+
+/* ── OTHER DOCTORS ───────────────────────────────────────── */
+.other-doctors { padding: 80px 0; background: var(--white); }
+.section-eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.section-heading { font-size: clamp(1.5rem,3vw,2.2rem); color: var(--navy); }
+.section-heading span { color: var(--teal); }
+
+.mini-doctor-card {
+  background: var(--grey-50);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--grey-100);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;
+  text-decoration: none;
+}
+.mini-doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.mini-doctor-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+}
+.mini-card-body {
+  padding: 16px 16px 18px;
+  border-top: 2px solid var(--teal);
+}
+.mini-card-body h4 {
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.mini-card-body span {
+  font-size: 0.8rem;
+  color: var(--teal-dark);
+  font-weight: 500;
+}
+
+
+
+@media (max-width: 992px) {
+  .doctor-photo-card { position: static; margin-bottom: 32px; }
+  .expertise-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .profile-section { padding: 56px 0; }
+  .doctor-photo-card img { height: 300px; }
+  .info-block { padding: 24px 20px; }
+  .mini-stats { gap: 12px; }
+  .qual-list li { width: 100%; }
+}
+@media (max-width: 575px) {
+  .doctor-photo-card img { height: 260px; }
+  .photo-card-body { padding: 22px 18px 20px; }
+  .photo-card-body h2 { font-size: 1.2rem; }
+  .block-title { font-size: 0.95rem; }
+}

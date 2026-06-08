@@ -1,0 +1,267 @@
+/* ============================================================
+   APEX HEALTH CARE – Doctors Page Stylesheet
+   ============================================================ */
+
+/* ── PAGE SECTION ────────────────────────────────────────── */
+.doctors-page-section {
+  padding: 80px 0;
+  background: var(--grey-50);
+}
+
+.doctors-page-header {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.doctors-page-header .section-subtext {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── DOCTOR CARD ─────────────────────────────────────────── */
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.doctor-card-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  flex-shrink: 0;
+  background: var(--grey-100);
+}
+
+.doctor-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.doctor-card:hover .doctor-card-img {
+  transform: scale(1.05);
+}
+
+.doctor-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 1.25rem 1rem 1.5rem;
+  text-align: center;
+}
+
+.doctor-card-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.doctor-card-specialty {
+  font-size: clamp(0.78rem, 1.8vw, 0.88rem);
+  font-weight: 600;
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+  line-height: 1.45;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.doctor-card-btn {
+  width: 100%;
+  max-width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  min-height: 42px;
+}
+
+/* ── LEGACY CLASSES (kept for compatibility) ───────────────── */
+.our-doctors {
+  background: var(--grey-50);
+  text-align: center;
+}
+
+.doctor-item { margin-bottom: 32px; }
+
+.doctor-content {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.doctor-content:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.doctor-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.doctor-image,
+img.doctor-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.doctor-content:hover .doctor-image-wrap img { transform: scale(1.06); }
+
+.doctor-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(10,22,40,0.85) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.doctor-content:hover .doctor-overlay { opacity: 1; }
+
+.doctor-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--teal);
+  color: var(--navy);
+  padding: 8px 20px;
+  border-radius: 50px;
+  transform: translateY(10px);
+  transition: transform var(--transition);
+}
+
+.doctor-content:hover .doctor-view-btn { transform: translateY(0); }
+
+.doctor-info {
+  padding: 20px 18px 22px;
+  border-top: 2px solid var(--teal);
+}
+
+.doctor-info h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.specialty-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--teal);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.specialty-badge i { font-size: 0.72rem; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+/* Large desktop – 4 columns */
+@media (min-width: 1200px) {
+  .doctor-card-image { aspect-ratio: 3 / 4; }
+}
+
+/* Tablet landscape */
+@media (max-width: 991px) {
+  .doctors-page-section { padding: 72px 0; }
+  .doctors-page-header { margin-bottom: 2.5rem; }
+  .doctor-card-image { aspect-ratio: 1 / 1; }
+  .doctor-card-btn { max-width: 180px; }
+}
+
+/* Tablet portrait */
+@media (max-width: 767px) {
+  .doctors-page-section { padding: 56px 0; }
+  .doctors-page-header { margin-bottom: 2rem; }
+  .doctors-page-header .section-heading {
+    font-size: clamp(1.5rem, 5vw, 1.85rem);
+  }
+  .doctor-card-body { padding: 1rem 0.875rem 1.25rem; }
+  .doctor-card-btn { max-width: 100%; }
+}
+
+/* Mobile – single column, horizontal-style cards optional */
+@media (max-width: 575px) {
+  .doctors-page-section { padding: 48px 0; }
+  .doctors-page-header { margin-bottom: 1.75rem; padding: 0 4px; }
+
+  .doctor-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .doctor-card-image {
+    width: 38%;
+    max-width: 140px;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+
+  .doctor-card-body {
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 1rem 1rem 1rem 0.875rem;
+    width: 62%;
+  }
+
+  .doctor-card-specialty {
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  .doctor-card-btn {
+    max-width: 100%;
+    font-size: 0.82rem;
+    padding: 8px 16px;
+    min-height: 40px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .doctor-card-image {
+    width: 36%;
+    max-width: 120px;
+  }
+
+  .doctor-card-body { width: 64%; padding: 0.875rem 0.75rem; }
+  .doctor-card-name { font-size: 0.9rem; }
+  .doctor-card-specialty { font-size: 0.75rem; }
+}
+
+/* Touch devices – disable hover zoom */
+@media (hover: none) and (pointer: coarse) {
+  .doctor-card:hover .doctor-card-img { transform: none; }
+  .doctor-card-btn { min-height: 44px; }
+}
